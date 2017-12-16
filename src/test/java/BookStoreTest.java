@@ -1,5 +1,6 @@
 
 
+
 import static org.junit.Assert.*;
 
 import java.util.Collections;
@@ -10,6 +11,9 @@ import org.hamcrest.CoreMatchers;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
+
+import br.edu.unidavi.poo.maven.App;
+import br.edu.unidavi.poo.maven.BookStore;
 
 public class BookStoreTest {
 
@@ -95,34 +99,40 @@ public class BookStoreTest {
 	@Test
 	public void groupOfFourPlusGroupOfTwoIsCheaperThanTwoGroupsOfThree() {
 		List<Integer> books = Arrays.asList(1, 1, 2, 2, 3, 4);
-		assertEquals(40.8, bookStore.calculateBasketCost(books), EQUALITY_TOLERANCE);
+		//assertEquals(40.8, bookStore.calculateBasketCost(books), EQUALITY_TOLERANCE);
+		assertThat(bookStore.calculateBasketCost(books), CoreMatchers.is(40.8));
 	}
 
 	@Ignore("Remove to run test")
 	@Test
 	public void twoEachOfFirst4BooksAnd1CopyEachOfRest() {
 		List<Integer> books = Arrays.asList(1, 1, 2, 2, 3, 3, 4, 4, 5);
-		assertEquals(55.60, bookStore.calculateBasketCost(books), EQUALITY_TOLERANCE);
+		//assertEquals(55.60, bookStore.calculateBasketCost(books), EQUALITY_TOLERANCE);
+		assertThat(bookStore.calculateBasketCost(books), CoreMatchers.is(55.60));
 	}
 
 	@Ignore("Remove to run test")
 	@Test
 	public void twoCopiesOfEachBook() {
 		List<Integer> books = Arrays.asList(1, 1, 2, 2, 3, 3, 4, 4, 5, 5);
-		assertEquals(60.00, bookStore.calculateBasketCost(books), EQUALITY_TOLERANCE);
+		//assertEquals(60.00, bookStore.calculateBasketCost(books), EQUALITY_TOLERANCE);
+		assertThat(bookStore.calculateBasketCost(books), CoreMatchers.is(60.00));
 	}
 
 	@Ignore("Remove to run test")
 	@Test
 	public void threeCopiesOfFirstBookAnd2EachOfRemaining() {
 		List<Integer> books = Arrays.asList(1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1);
-		assertEquals(68.00, bookStore.calculateBasketCost(books), EQUALITY_TOLERANCE);
+		//assertEquals(68.00, bookStore.calculateBasketCost(books), EQUALITY_TOLERANCE);
+		assertThat(bookStore.calculateBasketCost(books), CoreMatchers.is(68.00));
 	}
 
 	@Ignore("Remove to run test")
 	@Test
 	public void threeEachOFirst2BooksAnd2EachOfRemainingBooks() {
 		List<Integer> books = Arrays.asList(1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 2);
-		assertEquals(75.20, bookStore.calculateBasketCost(books), EQUALITY_TOLERANCE);
+		//assertEquals(75.20, bookStore.calculateBasketCost(books), EQUALITY_TOLERANCE);
+		assertThat(bookStore.calculateBasketCost(books), CoreMatchers.is(75.20));
 	}
+	
 }

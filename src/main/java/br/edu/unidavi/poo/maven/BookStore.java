@@ -1,3 +1,4 @@
+package br.edu.unidavi.poo.maven;
 import java.util.List;
 
 public class BookStore {
@@ -6,7 +7,7 @@ public class BookStore {
 	
 	public Double calculateBasketCost(List<Integer> books) {
 		
-		return books.size() * this.PRECO;
+		return books.size() * PRECO;
 		
 	}
 
