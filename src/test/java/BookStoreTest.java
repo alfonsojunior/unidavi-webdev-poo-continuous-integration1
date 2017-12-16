@@ -24,21 +24,18 @@ public class BookStoreTest {
 		bookStore = new BookStore();
 	}
 	
-	@Ignore("Remove to run test")
 	@Test
 	public void appTest() {
 		App.main(new String[] {});
 		assertThat(0.0, CoreMatchers.is(0.0));
 	}
 
-	@Ignore("Remove to run test")
 	@Test
 	public void onlyASingleBook() {
 		List<Integer> books = Collections.singletonList(1);
 		assertThat(bookStore.calculateBasketCost(books), CoreMatchers.is(8.0));
 	}
 
-	@Ignore("Remove to run test")
 	@Test
 	public void twoOfSameBook() {
 		List<Integer> books = Arrays.asList(1, 1);
@@ -94,7 +91,6 @@ public class BookStoreTest {
 		assertThat(bookStore.calculateBasketCost(books), CoreMatchers.is(51.6));
 	}
 
-	/*
 	@Ignore("Remove to run test")
 	@Test
 	public void groupOfFourPlusGroupOfTwoIsCheaperThanTwoGroupsOfThree() {
@@ -129,5 +125,4 @@ public class BookStoreTest {
 		List<Integer> books = Arrays.asList(1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 2);
 		assertEquals(75.20, bookStore.calculateBasketCost(books), EQUALITY_TOLERANCE);
 	}
-	*/
 }
